@@ -1,0 +1,36 @@
+User-agent: *
+Allow: /
+
+# Facebook crawler
+User-agent: facebookexternalhit
+Allow: /
+
+# WhatsApp crawler
+User-agent: WhatsApp
+Allow: /
+
+# LinkedIn crawler
+User-agent: LinkedInBot
+Allow: /
+
+# Twitter / X crawler
+User-agent: Twitterbot
+Allow: /
+
+# Telegram crawler
+User-agent: TelegramBot
+Allow: /
+
+# Google crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing crawler
+User-agent: bingbot
+Allow: /
+
+# Sitemap
+Sitemap: https://blacknwhitestudio.com/sitemap.xml

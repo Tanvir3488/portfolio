@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanvir Ahmed – CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #111111;
+    --dark: #2c2c2c;
+    --mid: #555555;
+    --light: #888888;
+    --rule: #cccccc;
+    --rule-light: #e5e5e5;
+    --bg-sidebar: #f7f7f7;
+    --bg-page: #ffffff;
+    --font-head: 'Source Serif 4', Georgia, serif;
+    --font-body: 'Source Sans 3', Helvetica, sans-serif;
+  }
+
+  html, body {
+    background: #d8d8d8;
+    font-family: var(--font-body);
+    color: var(--dark);
+    font-size: 9pt;
+    line-height: 1.45;
+  }
+
+  /* ── PAGE WRAPPER for scale ── */
+  .page-wrapper {
+    width: 210mm;
+    margin: 8mm auto;
+    transform-origin: top center;
+  }
+
+  /* ── PAGE ── */
+  .page {
+    width: 210mm;
+    background: var(--bg-page);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 14px 20px 11px;
+    border-bottom: 2px solid var(--black);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 14px;
+  }
+
+  .name {
+    font-family: var(--font-head);
+    font-size: 19pt;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: -0.3px;
+    line-height: 1.1;
+  }
+
+  .title {
+    font-size: 8.5pt;
+    font-weight: 400;
+    color: var(--mid);
+    margin-top: 3px;
+    letter-spacing: 0.2px;
+  }
+
+  .contact-block {
+    text-align: right;
+    font-size: 8pt;
+    color: var(--mid);
+    line-height: 1.75;
+    flex-shrink: 0;
+  }
+
+  .contact-block a {
+    color: var(--dark);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── BODY GRID ── */
+  .body {
+    display: grid;
+    grid-template-columns: 178px 1fr;
+    flex: 1;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--rule);
+    padding: 13px 13px;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    padding: 13px 18px 13px;
+  }
+
+  /* ── SECTION TITLE ── */
+  .sec-title {
+    font-family: var(--font-head);
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--black);
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 2px;
+    margin-bottom: 6px;
+  }
+
+  .section {
+    margin-bottom: 11px;
+  }
+
+  /* ── SIDEBAR SKILL GROUPS ── */
+  .skill-group {
+    margin-bottom: 7px;
+  }
+
+  .skill-label {
+    font-size: 7.5pt;
+    font-weight: 600;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+  }
+
+  .skill-items {
+    font-size: 8pt;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-degree {
+    font-size: 8pt;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1.3;
+  }
+
+  .edu-school {
+    font-size: 7.8pt;
+    color: var(--mid);
+    margin-top: 1px;
+  }
+
+  /* ── SMALL TEXT ── */
+  .small-text {
+    font-size: 7.8pt;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  /* ── RULE ── */
+  hr {
+    border: none;
+    border-top: 1px solid var(--rule-light);
+    margin: 8px 0;
+  }
+
+  /* ── SUMMARY ── */
+  .summary {
+    font-size: 8.5pt;
+    color: var(--mid);
+    line-height: 1.55;
+  }
+
+  /* ── EXPERIENCE ── */
+  .job {
+    margin-bottom: 9px;
+  }
+
+  .job-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 5px;
+  }
+
+  .job-title {
+    font-size: 9pt;
+    font-weight: 600;
+    color: var(--black);
+  }
+
+  .job-date {
+    font-size: 7.5pt;
+    color: var(--light);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .job-company {
+    font-size: 8pt;
+    font-weight: 500;
+    color: var(--dark);
+    font-style: italic;
+    margin-bottom: 3px;
+  }
+
+  ul.bullets {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul.bullets li {
+    font-size: 8pt;
+    color: var(--mid);
+    padding-left: 11px;
+    position: relative;
+    margin-bottom: 1.5px;
+    line-height: 1.4;
+  }
+
+  ul.bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--rule);
+    font-size: 8pt;
+    line-height: 1.4;
+  }
+
+  /* ── PROJECTS ── */
+  .project {
+    margin-bottom: 8px;
+  }
+
+  .project-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 5px;
+  }
+
+  .project-name {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: var(--black);
+  }
+
+  .project-tech {
+    font-size: 7.5pt;
+    color: var(--light);
+    flex-shrink: 0;
+  }
+
+  .project-type {
+    font-size: 7.8pt;
+    color: var(--mid);
+    font-style: italic;
+    margin-bottom: 2px;
+  }
+
+  @media print {
+    html, body { background: white; }
+    .page-wrapper { margin: 0; }
+    .page { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div>
+      <div class="name">Tanvir Ahmed</div>
+      <div class="title">Senior Software Engineer &nbsp;·&nbsp; Android &nbsp;|&nbsp; Backend (Go, Laravel) &nbsp;|&nbsp; Full System Development</div>
+    </div>
+    <div class="contact-block">
+      <div>Dhaka, Bangladesh</div>
+      <div>+880 1945-936934</div>
+      <div><a href="mailto:Tanvir3488@gmail.com">Tanvir3488@gmail.com</a></div>
+      <div><a href="#">github.com/Tanvir3488</a></div>
+      <div><a href="https://www.linkedin.com/in/tanvir3488/" target="_blank">LinkedIn</a> &nbsp;·&nbsp; <a href="https://sites.google.com/view/tanvir3488/home" target="_blank">Portfolio</a></div>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="section">
+        <div class="sec-title">Languages</div>
+        <div class="skill-items">
+          Go (Golang)<br>
+          Kotlin<br>
+          Java<br>
+          PHP (Laravel)
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sec-title">Android</div>
+        <div class="skill-items">
+          Jetpack Compose<br>
+          MVVM / MVI<br>
+          Clean Architecture<br>
+          Multi-module<br>
+          Convention Plugin<br>
+          Coroutines &amp; Flow<br>
+          XML Layouts
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sec-title">Backend &amp; API</div>
+        <div class="skill-items">
+          REST API Design<br>
+          gRPC<br>
+          WebSocket / SSE<br>
+          JWT Auth<br>
+          Microservices<br>
+          API Gateway
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sec-title">DevOps &amp; Infra</div>
+        <div class="skill-items">
+          Docker &amp; Compose<br>
+          Nginx<br>
+          Redis &amp; RabbitMQ<br>
+          MQTT<br>
+          CI/CD Pipelines<br>
+          VPS Deployment
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sec-title">Databases</div>
+        <div class="skill-items">
+          PostgreSQL<br>
+          MySQL<br>
+          SQLite
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sec-title">Other</div>
+        <div class="skill-items">
+          Firebase (Auth, FCM)<br>
+          Google Maps<br>
+          NFC<br>
+          Socket.IO
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+        <div class="sec-title">Education</div>
+        <div class="edu-degree">B.Sc. Computer Science &amp; Engineering</div>
+        <div class="edu-school">Daffodil International University</div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+        <div class="sec-title">Tools</div>
+        <div class="small-text">
+          Claude CLI · GitHub Copilot<br>
+          ChatGPT · Gemini
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+        <div class="sec-title">Availability</div>
+        <div class="small-text">
+          Open to part-time or<br>
+          contract opportunities<br>
+          (Go backend / full-stack)
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- SUMMARY -->
+      <div class="section">
+        <div class="sec-title">Professional Summary</div>
+        <p class="summary">
+          Senior Software Engineer with <strong>8+ years of Android development</strong> and <strong>4+ years of backend development</strong> using Go and Laravel. Experienced in <strong>end-to-end system ownership</strong> — from gathering requirements and defining system architecture, to database design, API specification, mobile development, and production deployment. Regularly leads technical direction across mobile, backend, and web/admin layers; guides UI/UX designers based on functional requirements; and defines data flow and integration contracts for cross-functional teams.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- EXPERIENCE -->
+      <div class="section">
+        <div class="sec-title">Professional Experience</div>
+
+        <div class="job">
+          <div class="job-row">
+            <span class="job-title">Senior Software Engineer</span>
+            <span class="job-date">Mar 2026 – Present</span>
+          </div>
+          <div class="job-company">Brain Station 23</div>
+          <ul class="bullets">
+            <li>Contributing to Android application development, system architecture discussions, backend API design, and R&amp;D initiatives.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-row">
+            <span class="job-title">Senior Software Engineer</span>
+            <span class="job-date">Aug 2024 – Feb 2026</span>
+          </div>
+          <div class="job-company">TechnoNext Software Ltd</div>
+          <ul class="bullets">
+            <li>Led a project end-to-end — owned requirements, system design decisions, and API analysis; optimized API structure and reduced unnecessary network calls, improving performance measurably.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-row">
+            <span class="job-title">Senior Programmer</span>
+            <span class="job-date">Apr 2023 – Jul 2024</span>
+          </div>
+          <div class="job-company">Aamra Technologies Limited</div>
+          <ul class="bullets">
+            <li>Developed Android POS applications; built and maintained backend REST APIs using Laravel; coordinated API contracts between mobile and backend teams.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-row">
+            <span class="job-title">Senior Software Engineer</span>
+            <span class="job-date">Apr 2018 – Mar 2023</span>
+          </div>
+          <div class="job-company">Arena Phone BD Ltd</div>
+          <ul class="bullets">
+            <li>Designed and shipped multiple Android applications; served as team lead defining project architecture and mentoring junior developers.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <!-- PROJECTS -->
+      <div class="section">
+        <div class="sec-title">Selected Projects</div>
+
+        <div class="project">
+          <div class="project-row">
+            <span class="project-name">GoNStay — OTA Platform</span>
+            <span class="project-tech">Go · Laravel · Docker</span>
+          </div>
+          <div class="project-type">Online Travel Agency · Backend Architecture &amp; Android</div>
+          <ul class="bullets">
+            <li>Defined system architecture, DB schema, and API contracts for booking and service management; built Go backend with concurrent processing; deployed via Docker on VPS.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-row">
+            <span class="project-name">Easy POS &amp; Distribution Management</span>
+            <span class="project-tech">Android · Laravel · MySQL</span>
+          </div>
+          <div class="project-type">POS &amp; Supply Chain · Full System Design</div>
+          <ul class="bullets">
+            <li>Led architecture for POS and distribution workflows — designed DB, API requirements, and data flow across mobile and web admin; guided designer on UI flow; developed Android client.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-row">
+            <span class="project-name">Hotel Management System</span>
+            <span class="project-tech">Android · Backend · Web Admin</span>
+          </div>
+          <div class="project-type">Hospitality · Architecture &amp; Requirements</div>
+          <ul class="bullets">
+            <li>Gathered requirements; designed system flow, DB schema, and API specs covering booking, room management, and billing across mobile and web admin panel.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-row">
+            <span class="project-name">Terminal Management System</span>
+            <span class="project-tech">Laravel · Android · MySQL</span>
+          </div>
+          <div class="project-type">POS Infrastructure · Full Ownership — DB, API, Architecture &amp; Mobile</div>
+          <ul class="bullets">
+            <li>Owned all technical decisions — designed full DB schema, defined API contracts, and architected the system flow for terminal device and transaction management; developed the Android client end-to-end.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-row">
+            <span class="project-name">Quiz Hub · LearnStar · SMS Manager</span>
+            <span class="project-tech">Android · Backend</span>
+          </div>
+          <div class="project-type">EdTech &amp; Utility · System Design &amp; Development</div>
+          <ul class="bullets">
+            <li>Defined architecture, data flow, and API requirements for each platform; guided designer on UX flow; developed Android apps and backend services end-to-end.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-row">
+            <span class="project-name">Track Your Car · Multiple E-commerce Platforms</span>
+            <span class="project-tech">Android · Go / Laravel · Web</span>
+          </div>
+          <div class="project-type">Telematics &amp; Commerce · Full Stack</div>
+          <ul class="bullets">
+            <li>Architected vehicle tracking system and multiple e-commerce platforms — defined system flow, DB design, API specs, and mobile-web integration strategy.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p style="font-size:8pt;color:#888888;margin-top:2px;">
+        For more projects, please visit the
+        <a href="https://sites.google.com/view/tanvir3488/home" target="_blank" style="color:#2c2c2c;border-bottom:1px solid #cccccc;text-decoration:none;">Portfolio</a>.
+      </p>
+
+    </main>
+  </div>
+
+</div><!-- .page -->
+</div><!-- .page-wrapper -->
+
+<script>
+  function scalePage() {
+    const wrapper = document.querySelector('.page-wrapper');
+    const page = document.querySelector('.page');
+    const pageHeightMm = 297;
+    const pxPerMm = 96 / 25.4;
+    const targetH = pageHeightMm * pxPerMm;
+    const actualH = page.scrollHeight;
+    if (actualH > targetH) {
+      const scale = targetH / actualH;
+      wrapper.style.transform = `scale(${scale})`;
+      wrapper.style.height = (actualH * scale) + 'px';
+    }
+  }
+  document.fonts.ready.then(scalePage);
+</script>
+</body>
+</html>

@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanvir Ahmed — Senior Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ─── */
+:root {
+  --bg:        #080b10;
+  --surface:   #0f1318;
+  --surface2:  #171d24;
+  --border:    rgba(255,255,255,0.06);
+  --border2:   rgba(255,255,255,0.12);
+  --accent:    #e8c37a;     /* warm gold */
+  --accent2:   #5b9cf6;     /* sky blue  */
+  --accent3:   #78d9a8;     /* mint      */
+  --text:      #dde3ec;
+  --muted:     #5a6475;
+  --muted2:    #8892a0;
+  --red:       #f07070;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* noise */
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:9999;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+  opacity:.5;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:200;
+  display: flex; justify-content:space-between; align-items:center;
+  padding: 1.1rem 3.5rem;
+  background: rgba(8,11,16,0.88);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem; font-style: italic; font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -.01em;
+}
+.nav-links { display:flex; gap:2.5rem; list-style:none; }
+.nav-links a {
+  color: var(--muted2); text-decoration:none;
+  font-size: .78rem; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--text); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 7rem 3.5rem 4rem;
+  position: relative; overflow: hidden;
+  gap: 4rem;
+}
+.hero-bg-lines {
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(90deg,
+      rgba(232,195,122,0.025) 0px, rgba(232,195,122,0.025) 1px,
+      transparent 1px, transparent 80px),
+    repeating-linear-gradient(0deg,
+      rgba(91,156,246,0.018) 0px, rgba(91,156,246,0.018) 1px,
+      transparent 1px, transparent 80px);
+}
+.hero-orb {
+  position: absolute; border-radius: 50%; pointer-events: none;
+  filter: blur(80px);
+}
+.hero-orb-1 { width:500px; height:500px; background:rgba(232,195,122,.07); top:-100px; right:100px; }
+.hero-orb-2 { width:350px; height:350px; background:rgba(91,156,246,.06); bottom:0; left:0; }
+
+.hero-left { position: relative; z-index:1; }
+
+.hero-badge {
+  display: inline-flex; align-items:center; gap:.5rem;
+  border: 1px solid rgba(232,195,122,.25);
+  background: rgba(232,195,122,.06);
+  padding: .35rem 1rem;
+  border-radius: 100px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem; color: var(--accent);
+  letter-spacing: .06em;
+  margin-bottom: 2rem;
+}
+.hero-badge-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); animation: blink 2s infinite; }
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 6.5vw, 6rem);
+  font-weight: 900;
+  line-height: .95;
+  letter-spacing: -.03em;
+  margin-bottom: .6rem;
+}
+.hero-name em { font-style: italic; color: var(--accent); }
+
+.hero-sub {
+  font-size: clamp(.95rem, 1.8vw, 1.15rem);
+  color: var(--muted2); font-weight: 400;
+  margin-bottom: .6rem;
+}
+.hero-company {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .8rem; color: var(--accent2);
+  margin-bottom: 1.8rem;
+  letter-spacing:.04em;
+}
+.hero-desc {
+  max-width: 560px; font-size: 1rem; color: #7a8694;
+  line-height: 1.85; margin-bottom: 2.5rem;
+}
+
+.cta-row { display:flex; gap:1rem; flex-wrap:wrap; }
+.btn {
+  display: inline-flex; align-items:center; gap:.5rem;
+  padding: .8rem 1.8rem;
+  border-radius: 5px;
+  font-family: 'Outfit', sans-serif;
+  font-size: .88rem; font-weight: 500;
+  text-decoration: none;
+  transition: all .22s;
+  cursor: pointer; border: none;
+}
+.btn-gold {
+  background: var(--accent); color: #0a0b0e;
+}
+.btn-gold:hover { background: #f0d090; transform:translateY(-2px); box-shadow:0 8px 28px rgba(232,195,122,.3); }
+.btn-ghost {
+  background: transparent; color: var(--text);
+  border: 1px solid var(--border2);
+}
+.btn-ghost:hover { background: var(--surface2); border-color:var(--border2); transform:translateY(-2px); }
+
+/* hero stats column */
+.hero-stats-col {
+  position: relative; z-index:1;
+  display: flex; flex-direction: column; gap: 1.2rem;
+}
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.8rem;
+  text-align: center;
+  min-width: 140px;
+  transition: border-color .25s;
+}
+.stat-card:hover { border-color: rgba(232,195,122,.25); }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem; font-weight: 900;
+  color: var(--accent); line-height: 1;
+}
+.stat-lbl { font-size:.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; margin-top:.3rem; }
+
+/* ─── SECTION SHARED ─── */
+.section-wrap { max-width: 1180px; margin: 0 auto; padding: 6rem 3.5rem; }
+
+.section-header {
+  display: flex; align-items: baseline; gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+.s-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem; color: var(--accent2);
+  letter-spacing: .12em;
+}
+.s-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700; letter-spacing: -.02em;
+}
+.s-line { flex:1; height:1px; background:var(--border); }
+
+/* ─── SKILLS GRID ─── */
+.skills-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1.2rem; }
+.skill-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px; padding: 1.8rem;
+  position: relative; overflow: hidden;
+  transition: border-color .3s, transform .3s;
+}
+.skill-card::after {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background: var(--bar-color, var(--accent));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .4s ease;
+}
+.skill-card:hover { transform:translateY(-4px); border-color: rgba(255,255,255,.12); }
+.skill-card:hover::after { transform: scaleX(1); }
+
+.skill-card.gold  { --bar-color: var(--accent); }
+.skill-card.blue  { --bar-color: var(--accent2); }
+.skill-card.green { --bar-color: var(--accent3); }
+.skill-card.red   { --bar-color: var(--red); }
+
+.skill-emoji { font-size:2rem; margin-bottom:1rem; display:block; }
+.skill-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; font-weight: 700; margin-bottom:.2rem;
+}
+.skill-yrs {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem; color: var(--accent); margin-bottom:.9rem;
+}
+.tags { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.8rem; }
+.tag {
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border);
+  padding: .22rem .65rem; border-radius:4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem; color: var(--muted2);
+  transition: color .2s, background .2s;
+}
+.skill-card:hover .tag { color: var(--text); background: rgba(255,255,255,.07); }
+
+/* ─── TECH STRIPS ─── */
+.tech-strips { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem; }
+.tech-group { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.5rem; }
+.tech-group-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem; color: var(--accent2);
+  text-transform: uppercase; letter-spacing:.1em;
+  margin-bottom:1rem;
+  display:flex; align-items:center; gap:.5rem;
+}
+.tech-group-title::before { content:''; width:8px; height:8px; border-radius:50%; background:var(--accent2); display:inline-block; }
+.tech-list { display:flex; flex-wrap:wrap; gap:.4rem; }
+.tech-chip {
+  background:rgba(255,255,255,.04); border:1px solid var(--border);
+  padding:.28rem .7rem; border-radius:5px;
+  font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--muted2);
+  transition: all .2s;
+}
+.tech-chip:hover { color:var(--text); border-color:rgba(232,195,122,.3); background:rgba(232,195,122,.06); }
+
+/* ─── EXPERIENCE ─── */
+.exp-list { display:flex; flex-direction:column; gap:0; }
+.exp-item {
+  display:grid; grid-template-columns:160px 1fr;
+  gap: 0 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: opacity .3s;
+}
+.exp-item:first-child { padding-top:0; }
+.exp-item:last-child { border-bottom:none; }
+.exp-item:hover { opacity:1; }
+.exp-period {
+  font-family:'JetBrains Mono',monospace; font-size:.72rem;
+  color:var(--muted); padding-top:.25rem; line-height:1.6;
+}
+.exp-period .current {
+  display:inline-block; margin-top:.4rem;
+  background: rgba(120,217,168,.12); border:1px solid rgba(120,217,168,.25);
+  color:var(--accent3); padding:.15rem .55rem; border-radius:100px;
+  font-size:.66rem; letter-spacing:.05em;
+}
+.exp-right {}
+.exp-company {
+  font-family:'Playfair Display', serif;
+  font-size:1.25rem; font-weight:700; margin-bottom:.15rem;
+}
+.exp-company a { color:inherit; text-decoration:none; }
+.exp-company a:hover { color:var(--accent); }
+.exp-role { color:var(--accent2); font-size:.88rem; font-weight:500; margin-bottom:.3rem; }
+.exp-desc { font-size:.88rem; color:#6b7685; line-height:1.8; }
+.exp-desc li { list-style:none; padding-left:1.2rem; position:relative; margin-bottom:.3rem; }
+.exp-desc li::before { content:'—'; position:absolute; left:0; color:var(--accent); }
+
+/* ─── PROJECTS ─── */
+.projects-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(340px,1fr)); gap:1.4rem; }
+.project-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:16px; overflow:hidden;
+  transition:border-color .3s, transform .3s;
+  display:flex; flex-direction:column;
+}
+.project-card:hover { border-color:rgba(91,156,246,.35); transform:translateY(-4px); }
+.video-wrap { position:relative; width:100%; padding-top:56.25%; background:var(--surface2); overflow:hidden; }
+.video-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:none; }
+.no-video {
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  flex-direction:column; gap:.5rem;
+  background: linear-gradient(135deg, var(--surface2) 0%, #0d1521 100%);
+}
+.no-video-icon { font-size:2.5rem; }
+.no-video-label { font-size:.75rem; color:var(--muted); font-family:'JetBrains Mono',monospace; }
+/* YouTube thumbnail player */
+.yt-thumb {
+  position:absolute; inset:0;
+  display:block; text-decoration:none;
+  overflow:hidden;
+}
+.yt-thumb img {
+  width:100%; height:100%; object-fit:cover;
+  transition: transform .4s ease, filter .4s ease;
+  filter: brightness(.85);
+}
+.yt-thumb:hover img { transform:scale(1.04); filter:brightness(.6); }
+.yt-play {
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:.6rem;
+}
+.yt-play-btn {
+  width:60px; height:60px; border-radius:50%;
+  background:rgba(255,255,255,.15);
+  border:2px solid rgba(255,255,255,.4);
+  backdrop-filter:blur(6px);
+  display:flex; align-items:center; justify-content:center;
+  transition: background .25s, transform .25s, border-color .25s;
+  flex-shrink:0;
+}
+.yt-play-btn svg { width:22px; height:22px; fill:white; margin-left:3px; }
+.yt-thumb:hover .yt-play-btn { background:rgba(255,60,60,.85); border-color:transparent; transform:scale(1.1); }
+.yt-watch-label {
+  font-family:'JetBrains Mono',monospace; font-size:.68rem;
+  color:rgba(255,255,255,.7); letter-spacing:.06em;
+  text-transform:uppercase;
+  background:rgba(0,0,0,.45); padding:.25rem .7rem; border-radius:100px;
+  backdrop-filter:blur(4px);
+  transition:color .2s;
+}
+.yt-thumb:hover .yt-watch-label { color:white; }
+.project-body { padding:1.5rem; flex:1; display:flex; flex-direction:column; }
+.project-cat {
+  font-family:'JetBrains Mono',monospace; font-size:.68rem;
+  color:var(--accent2); text-transform:uppercase; letter-spacing:.1em;
+  margin-bottom:.4rem;
+}
+.project-name {
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem; font-weight:700; margin-bottom:.7rem;
+}
+.project-desc { font-size:.83rem; color:#6b7685; line-height:1.75; flex:1; }
+.project-stack { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:1rem; }
+
+/* ─── CLIENTS ─── */
+.clients-grid { display:flex; flex-wrap:wrap; gap:.85rem; }
+.client-chip {
+  display:flex; align-items:center; gap:.6rem;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:100px; padding:.55rem 1.2rem;
+  font-size:.88rem; font-weight:500;
+  transition:all .22s; cursor:default;
+}
+.client-chip:hover { border-color:rgba(232,195,122,.3); background:var(--surface2); }
+.cdot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+
+/* ─── CONTACT ─── */
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+.contact-cards { display:flex; flex-direction:column; gap:1rem; }
+.contact-card {
+  display:flex; align-items:center; gap:1rem;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; padding:1.1rem 1.4rem;
+  text-decoration:none; color:var(--text);
+  transition:all .22s;
+}
+.contact-card:hover { border-color:rgba(232,195,122,.3); background:var(--surface2); transform:translateX(4px); }
+.contact-icon {
+  width:40px; height:40px; border-radius:10px;
+  background:rgba(232,195,122,.08);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1rem; flex-shrink:0;
+}
+.c-lbl { font-size:.68rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; }
+.c-val { font-size:.92rem; font-weight:500; }
+.social-grid { display:flex; flex-direction:column; gap:.8rem; }
+.soc-link {
+  display:flex; align-items:center; justify-content:space-between;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; padding:1rem 1.4rem;
+  text-decoration:none; color:var(--text);
+  font-size:.9rem; font-weight:500;
+  transition:all .22s;
+}
+.soc-link:hover { border-color:rgba(91,156,246,.4); background:var(--surface2); transform:translateX(4px); }
+.soc-arr { color:var(--muted); font-size:.85rem; transition:transform .2s; }
+.soc-link:hover .soc-arr { transform:translate(3px,-3px); color:var(--accent2); }
+
+/* ─── PLAY STORE ─── */
+.apps-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:1rem; }
+.app-tile {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:14px; padding:1.1rem;
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center; gap:.55rem;
+  text-decoration:none; color:var(--text);
+  transition:all .25s;
+}
+.app-tile:hover { border-color:rgba(120,217,168,.3); transform:translateY(-3px); }
+.app-icon { width:54px; height:54px; border-radius:13px; object-fit:cover; background:var(--surface2); }
+.app-name { font-size:.72rem; color:var(--muted2); line-height:1.3; }
+
+/* ─── FOOTER ─── */
+footer {
+  text-align:center; padding:3rem 2rem;
+  border-top:1px solid var(--border);
+  color:var(--muted); font-size:.8rem;
+}
+footer b { color:var(--accent); font-weight:600; }
+
+/* ─── ANIMATIONS ─── */
+@keyframes blink {
+  0%,100% { opacity:1; } 50% { opacity:.35; }
+}
+.fade {
+  opacity:0; transform:translateY(22px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.fade.in { opacity:1; transform:translateY(0); }
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px) {
+  nav { padding:1rem 1.5rem; }
+  .nav-links { display:none; }
+  .hero { grid-template-columns:1fr; padding:6rem 1.5rem 3rem; }
+  .hero-stats-col { flex-direction:row; flex-wrap:wrap; justify-content:flex-start; }
+  .stat-card { min-width:120px; }
+  .section-wrap { padding:4rem 1.5rem; }
+  .contact-grid { grid-template-columns:1fr; }
+  .exp-item { grid-template-columns:1fr; gap:.5rem; }
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width:5px; }
+::-webkit-scrollbar-track { background:var(--bg); }
+::-webkit-scrollbar-thumb { background:var(--surface2); border-radius:3px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Tanvir.</div>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-lines"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="hero-left">
+    <div class="hero-badge"><span class="hero-badge-dot"></span>Open to Part-time &amp; Contract</div>
+    <h1 class="hero-name">Tanvir<br><em>Ahmed</em></h1>
+    <p class="hero-sub">Senior Software Engineer · Android · Backend · Full-Stack</p>
+    <p class="hero-company">▸ Brain Station 23 &nbsp;·&nbsp; Dhaka, Bangladesh</p>
+    <p class="hero-desc">
+      8+ years building Android applications, 4+ years architecting Go &amp; Laravel backends. End-to-end system ownership — from requirements &amp; DB schema to mobile development, API design and production deployment on Docker + VPS.
+    </p>
+    <div class="cta-row">
+      <a href="mailto:Tanvir3488@gmail.com" class="btn btn-gold">✉ Hire Me</a>
+      <a href="#projects" class="btn btn-ghost">View Projects</a>
+      <a href="https://github.com/Tanvir3488" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+    </div>
+  </div>
+
+  <div class="hero-stats-col">
+    <div class="stat-card fade">
+      <div class="stat-num">8<span style="color:var(--muted2);font-size:1.4rem">+</span></div>
+      <div class="stat-lbl">Yrs Android</div>
+    </div>
+    <div class="stat-card fade">
+      <div class="stat-num">4<span style="color:var(--muted2);font-size:1.4rem">+</span></div>
+      <div class="stat-lbl">Yrs Backend</div>
+    </div>
+    <div class="stat-card fade">
+      <div class="stat-num">20<span style="color:var(--muted2);font-size:1.4rem">+</span></div>
+      <div class="stat-lbl">Projects</div>
+    </div>
+    <div class="stat-card fade">
+      <div class="stat-num">50M<span style="color:var(--muted2);font-size:1.4rem">+</span></div>
+      <div class="stat-lbl">App Downloads</div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="section-wrap" id="skills">
+  <div class="section-header fade">
+    <span class="s-num">01</span>
+    <h2 class="s-title">Core Expertise</h2>
+    <div class="s-line"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card gold fade">
+      <span class="skill-emoji">🤖</span>
+      <div class="skill-name">Android Development</div>
+      <div class="skill-yrs">● 8+ Years · 20+ Projects</div>
+      <p style="font-size:.83rem;color:var(--muted2);">Primary specialty — enterprise, fintech &amp; consumer apps for Bangladesh's leading companies.</p>
+      <div class="tags">
+        <span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">MVVM / MVI</span>
+        <span class="tag">Clean Architecture</span><span class="tag">Multi-module</span>
+        <span class="tag">Coroutines &amp; Flow</span><span class="tag">Hilt</span><span class="tag">Room</span>
+        <span class="tag">Retrofit</span><span class="tag">Convention Plugin</span>
+      </div>
+    </div>
+    <div class="skill-card blue fade">
+      <span class="skill-emoji">⚙️</span>
+      <div class="skill-name">Backend &amp; APIs</div>
+      <div class="skill-yrs">● 4+ Years</div>
+      <p style="font-size:.83rem;color:var(--muted2);">Go &amp; Laravel backends with microservices, gRPC, WebSocket/SSE and JWT auth.</p>
+      <div class="tags">
+        <span class="tag">Go (Golang)</span><span class="tag">PHP / Laravel</span><span class="tag">REST API</span>
+        <span class="tag">gRPC</span><span class="tag">WebSocket / SSE</span>
+        <span class="tag">JWT Auth</span><span class="tag">Microservices</span><span class="tag">API Gateway</span>
+      </div>
+    </div>
+    <div class="skill-card green fade">
+      <span class="skill-emoji">🐳</span>
+      <div class="skill-name">DevOps &amp; Infrastructure</div>
+      <div class="skill-yrs">● VPS · Docker · CI/CD</div>
+      <p style="font-size:.83rem;color:var(--muted2);">End-to-end deployment — containerised stacks on VPS with Nginx, Redis, RabbitMQ &amp; MQTT.</p>
+      <div class="tags">
+        <span class="tag">Docker &amp; Compose</span><span class="tag">Nginx</span>
+        <span class="tag">Redis</span><span class="tag">RabbitMQ</span><span class="tag">MQTT</span>
+        <span class="tag">CI/CD Pipelines</span><span class="tag">VPS Deployment</span>
+      </div>
+    </div>
+    <div class="skill-card red fade">
+      <span class="skill-emoji">🌐</span>
+      <div class="skill-name">Web &amp; Admin Panels</div>
+      <div class="skill-yrs">● 3+ Years · 5+ Projects</div>
+      <p style="font-size:.83rem;color:var(--muted2);">Laravel + Vue.js full-stack web apps and Livewire admin panels for enterprise clients.</p>
+      <div class="tags">
+        <span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">Blade / Livewire</span>
+        <span class="tag">HTML / CSS</span><span class="tag">REST API</span>
+      </div>
+    </div>
+    <div class="skill-card gold fade">
+      <span class="skill-emoji">🗄️</span>
+      <div class="skill-name">Databases</div>
+      <div class="skill-yrs">● PostgreSQL · MySQL · SQLite</div>
+      <p style="font-size:.83rem;color:var(--muted2);">Schema design, query optimisation, and mobile-offline-first architecture with Room.</p>
+      <div class="tags">
+        <span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">SQLite</span>
+        <span class="tag">Room DB</span><span class="tag">Redis</span>
+      </div>
+    </div>
+    <div class="skill-card blue fade">
+      <span class="skill-emoji">🎨</span>
+      <div class="skill-name">UI/UX &amp; Cross-Platform</div>
+      <div class="skill-yrs">● 2.5+ Years · Figma · Flutter</div>
+      <p style="font-size:.83rem;color:var(--muted2);">Pixel-perfect UI implementation, design system guidance &amp; cross-platform Flutter development.</p>
+      <div class="tags">
+        <span class="tag">Figma</span><span class="tag">Adobe XD</span><span class="tag">Flutter</span>
+        <span class="tag">Dart</span><span class="tag">NFC</span><span class="tag">Google Maps SDK</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FULL TECH STACK -->
+<div class="section-wrap" style="padding-top:0" id="techstack">
+  <div class="section-header fade">
+    <span class="s-num">02</span>
+    <h2 class="s-title">Full Tech Stack</h2>
+    <div class="s-line"></div>
+  </div>
+  <div class="tech-strips">
+    <div class="tech-group fade">
+      <div class="tech-group-title">Languages</div>
+      <div class="tech-list">
+        <span class="tech-chip">Go (Golang)</span><span class="tech-chip">Kotlin</span>
+        <span class="tech-chip">Java</span><span class="tech-chip">PHP</span><span class="tech-chip">Dart</span>
+      </div>
+    </div>
+    <div class="tech-group fade">
+      <div class="tech-group-title">Android</div>
+      <div class="tech-list">
+        <span class="tech-chip">Jetpack Compose</span><span class="tech-chip">MVVM / MVI</span>
+        <span class="tech-chip">Clean Architecture</span><span class="tech-chip">Multi-module</span>
+        <span class="tech-chip">Convention Plugin</span><span class="tech-chip">Coroutines &amp; Flow</span>
+        <span class="tech-chip">Hilt / Dagger</span><span class="tech-chip">Room DB</span>
+        <span class="tech-chip">Retrofit / Volley</span><span class="tech-chip">WorkManager</span>
+        <span class="tech-chip">Firebase FCM</span><span class="tech-chip">Google Maps</span>
+        <span class="tech-chip">NFC</span><span class="tech-chip">Socket.IO</span>
+        <span class="tech-chip">ISO 8583</span><span class="tech-chip">Fingerprint SDK</span>
+        <span class="tech-chip">ExoPlayer / HLS</span><span class="tech-chip">Thermal Print</span>
+        <span class="tech-chip">AdMob / IronSource</span>
+      </div>
+    </div>
+    <div class="tech-group fade">
+      <div class="tech-group-title">Backend &amp; API</div>
+      <div class="tech-list">
+        <span class="tech-chip">Go Concurrent Processing</span>
+        <span class="tech-chip">REST API Design</span><span class="tech-chip">gRPC</span>
+        <span class="tech-chip">WebSocket / SSE</span><span class="tech-chip">JWT Auth</span>
+        <span class="tech-chip">Microservices</span><span class="tech-chip">API Gateway</span>
+        <span class="tech-chip">Laravel</span><span class="tech-chip">Vue.js</span>
+        <span class="tech-chip">CodeIgniter</span>
+      </div>
+    </div>
+    <div class="tech-group fade">
+      <div class="tech-group-title">DevOps &amp; Infra</div>
+      <div class="tech-list">
+        <span class="tech-chip">Docker &amp; Compose</span><span class="tech-chip">Nginx</span>
+        <span class="tech-chip">Redis</span><span class="tech-chip">RabbitMQ</span>
+        <span class="tech-chip">MQTT</span><span class="tech-chip">CI/CD Pipelines</span>
+        <span class="tech-chip">VPS Deployment</span>
+      </div>
+    </div>
+    <div class="tech-group fade">
+      <div class="tech-group-title">Tools</div>
+      <div class="tech-list">
+        <span class="tech-chip">Claude CLI</span><span class="tech-chip">GitHub Copilot</span>
+        <span class="tech-chip">ChatGPT</span><span class="tech-chip">Gemini</span>
+        <span class="tech-chip">Figma</span><span class="tech-chip">Postman</span>
+      </div>
+    </div>
+    <div class="tech-group fade">
+      <div class="tech-group-title">Databases</div>
+      <div class="tech-list">
+        <span class="tech-chip">PostgreSQL</span><span class="tech-chip">MySQL</span>
+        <span class="tech-chip">SQLite</span><span class="tech-chip">Redis</span><span class="tech-chip">Room</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section-wrap" id="experience">
+  <div class="section-header fade">
+    <span class="s-num">03</span>
+    <h2 class="s-title">Work Experience</h2>
+    <div class="s-line"></div>
+  </div>
+  <div class="exp-list">
+
+    <div class="exp-item fade">
+      <div class="exp-period">
+        Mar 2026 – Present<br>
+        <span class="current">Current</span>
+      </div>
+      <div class="exp-right">
+        <div class="exp-company">Brain Station 23</div>
+        <div class="exp-role">Senior Software Engineer</div>
+        <ul class="exp-desc">
+          <li>Contribute to Android application development using modern Jetpack Compose architecture.</li>
+          <li>Participate in system architecture discussions and backend API requirement definition.</li>
+          <li>Involved in R&amp;D initiatives to explore new technologies and improve development practices.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item fade">
+      <div class="exp-period">Aug 2024 – Feb 2026</div>
+      <div class="exp-right">
+        <div class="exp-company">TechnoNext Software Ltd</div>
+        <div class="exp-role">Senior Software Engineer</div>
+        <ul class="exp-desc">
+          <li>Led a project end-to-end — gathered requirements, made system design decisions, and performed API analysis.</li>
+          <li>Optimized API structure and eliminated unnecessary network calls, resulting in measurable performance improvements.</li>
+          <li>Developed Android applications and coordinated API contracts between mobile and backend teams.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item fade">
+      <div class="exp-period">Apr 2023 – Jul 2024</div>
+      <div class="exp-right">
+        <div class="exp-company">Aamra Technologies Limited</div>
+        <div class="exp-role">Senior Programmer</div>
+        <ul class="exp-desc">
+          <li>Developed Android POS applications for enterprise clients.</li>
+          <li>Built and maintained backend REST APIs using Laravel.</li>
+          <li>Coordinated API contracts between mobile and backend teams to ensure smooth integration.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item fade">
+      <div class="exp-period">Apr 2018 – Mar 2023</div>
+      <div class="exp-right">
+        <div class="exp-company"><a href="https://www.arena.com.bd/" target="_blank">Arena Phone BD Ltd ↗</a></div>
+        <div class="exp-role">Senior Software Engineer · Android Developer</div>
+        <ul class="exp-desc">
+          <li>Designed and shipped multiple Android applications for well-known companies in Bangladesh.</li>
+          <li>Served as team lead, defined project architecture, and mentored junior developers.</li>
+          <li>Managed full development lifecycle from requirements to production deployment.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item fade">
+      <div class="exp-period">Sep 2018 – Present</div>
+      <div class="exp-right">
+        <div class="exp-company"><a href="https://www.fiverr.com/tanvir3488" target="_blank">Fiverr Freelance ↗</a></div>
+        <div class="exp-role">Android Developer · Project Manager</div>
+        <ul class="exp-desc">
+          <li>Android app development for international clients</li>
+          <li>System architecture, project management &amp; client communication</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section-wrap" id="projects">
+  <div class="section-header fade">
+    <span class="s-num">04</span>
+    <h2 class="s-title">Selected Projects</h2>
+    <div class="s-line"></div>
+  </div>
+  <div class="projects-grid">
+
+    <!-- GoNStay -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <div class="no-video">
+          <span class="no-video-icon">✈️</span>
+          <span class="no-video-label">OTA Platform</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Go · Laravel · Docker · Android</div>
+        <div class="project-name">GoNStay — Online Travel Agency</div>
+        <div class="project-desc">Full OTA backend with concurrent Go processing, booking engine, room management, billing APIs, and Android client. Defined full system architecture, DB schema and API specs. Deployed via Docker on VPS.</div>
+        <div class="project-stack">
+          <span class="tag">Go</span><span class="tag">Laravel</span><span class="tag">Docker</span><span class="tag">PostgreSQL</span><span class="tag">Android</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Easy POS -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <div class="no-video">
+          <span class="no-video-icon">🏪</span>
+          <span class="no-video-label">POS System</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Android · Laravel · MySQL · Full System</div>
+        <div class="project-name">Easy POS &amp; Distribution Management</div>
+        <div class="project-desc">End-to-end POS and supply chain system. Led full system design — DB schema, API contracts, mobile-web data flow. Built Android POS client and Laravel backend, guided designer on UX flow.</div>
+        <div class="project-stack">
+          <span class="tag">Android</span><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Compose</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hotel Management -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <div class="no-video">
+          <span class="no-video-icon">🏨</span>
+          <span class="no-video-label">Hospitality</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Android · Backend · Web Admin</div>
+        <div class="project-name">Hotel Management System</div>
+        <div class="project-desc">Requirements gathering, full system flow design, DB schema, and API specs covering booking, room management, and billing across mobile and web admin panel.</div>
+        <div class="project-stack">
+          <span class="tag">Android</span><span class="tag">Go</span><span class="tag">Laravel</span><span class="tag">PostgreSQL</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TMS -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=yKv2J78Wddg" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/yKv2J78Wddg/maxresdefault.jpg" alt="TMS demo" loading="lazy">
+          <div class="yt-play"><div class="yt-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="yt-watch-label">Watch on YouTube</span></div>
+        </a>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Laravel · Android · MySQL · Full Ownership</div>
+        <div class="project-name">Terminal Management System (TMS)</div>
+        <div class="project-desc">Full technical ownership — designed DB schema, API contracts and system architecture for POS terminal infrastructure across multiple banks. Remote OTA updates, bank key management, ad delivery to devices.</div>
+        <div class="project-stack">
+          <span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">Android</span><span class="tag">MySQL</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- POS App -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=MaaMjvHiybY" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/MaaMjvHiybY/maxresdefault.jpg" alt="POS Banking App demo" loading="lazy">
+          <div class="yt-play"><div class="yt-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="yt-watch-label">Watch on YouTube</span></div>
+        </a>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Android · FinTech · POS Devices</div>
+        <div class="project-name">POS Banking App</div>
+        <div class="project-desc">Secure bank transaction app on physical POS hardware. ISO 8583 protocol, card read, sale, withdrawal, void, EMI and receipt printing. Clean Architecture with Dagger 2.</div>
+        <div class="project-stack">
+          <span class="tag">Java</span><span class="tag">ISO 8583</span><span class="tag">Socket</span><span class="tag">Dagger 2</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- POS Manager Compose -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=_lvLZbDKY3I" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/_lvLZbDKY3I/maxresdefault.jpg" alt="POS Manager demo" loading="lazy">
+          <div class="yt-play"><div class="yt-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="yt-watch-label">Watch on YouTube</span></div>
+        </a>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Android · Jetpack Compose · Modern Stack</div>
+        <div class="project-name">POS Manager App</div>
+        <div class="project-desc">Retail management with Jetpack Compose. Sales monitoring, stock tracking, purchase orders, cash flow, and reporting. Built with Ktor, StateFlow, and Hilt.</div>
+        <div class="project-stack">
+          <span class="tag">Compose</span><span class="tag">Hilt</span><span class="tag">Ktor</span><span class="tag">StateFlow</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BSafe -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=VpU4hQtnE9k" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/VpU4hQtnE9k/maxresdefault.jpg" alt="BSafe demo" loading="lazy">
+          <div class="yt-play"><div class="yt-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="yt-watch-label">Watch on YouTube</span></div>
+        </a>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Android · Grameenphone · HSSE</div>
+        <div class="project-name">BSafe — Safety &amp; Compliance App</div>
+        <div class="project-desc">Field HSSE data capture for Grameenphone stakeholders. Incident reporting, graphical dashboards, geo-location tracking, and real-time push notifications.</div>
+        <div class="project-stack">
+          <span class="tag">Kotlin</span><span class="tag">MVVM</span><span class="tag">Room</span><span class="tag">Hilt</span><span class="tag">Coroutines</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Track Your Car -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=3eyEhiJQUEU" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/3eyEhiJQUEU/maxresdefault.jpg" alt="Track Your Car demo" loading="lazy">
+          <div class="yt-play"><div class="yt-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="yt-watch-label">Watch on YouTube</span></div>
+        </a>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Android · Banglalink · Fleet Tracking</div>
+        <div class="project-name">Track Your Car</div>
+        <div class="project-desc">Fleet tracking for Banglalink. Custom geo-fencing, requisition-wise visit tracking, directions, simulation reports, activity logs. Architected full system flow and DB design.</div>
+        <div class="project-stack">
+          <span class="tag">Kotlin</span><span class="tag">Maps SDK</span><span class="tag">WorkManager</span><span class="tag">Room</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Hub -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=kzdR5zFgvrE" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/kzdR5zFgvrE/maxresdefault.jpg" alt="Quiz Hub demo" loading="lazy">
+          <div class="yt-play"><div class="yt-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="yt-watch-label">Watch on YouTube</span></div>
+        </a>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Android · EdTech · Monetisation</div>
+        <div class="project-name">Quiz Hub &amp; LearnStar</div>
+        <div class="project-desc">Play quiz and earn money. VPN restriction, picture quiz, user tree system, coupon redemption, and 5 integrated ad platforms — AdMob, IronSource, AdColony, ApploVin, Unity.</div>
+        <div class="project-stack">
+          <span class="tag">Java</span><span class="tag">Unity</span><span class="tag">AdMob</span><span class="tag">IronSource</span><span class="tag">MVVM</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hamko Battery -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=rJJWqnodbIk" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/rJJWqnodbIk/maxresdefault.jpg" alt="Hamko Battery demo" loading="lazy">
+          <div class="yt-play"><div class="yt-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="yt-watch-label">Watch on YouTube</span></div>
+        </a>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Web · Laravel · Enterprise</div>
+        <div class="project-name">Hamko Battery Management System</div>
+        <div class="project-desc">Warranty &amp; guarantee management for battery products. Dealer/retailer tracking, serial number lookup, branch management, role-based access for super admin, branches and service centers.</div>
+        <div class="project-stack">
+          <span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">MySQL</span><span class="tag">Android</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- OMS -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=7jwOaisEo6Q" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/7jwOaisEo6Q/maxresdefault.jpg" alt="OMS demo" loading="lazy">
+          <div class="yt-play"><div class="yt-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="yt-watch-label">Watch on YouTube</span></div>
+        </a>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Android · Government · Ministry of Food</div>
+        <div class="project-name">OMS — Food Distribution System</div>
+        <div class="project-desc">Government app for fair grocery distribution at subsidised prices. Biometric fingerprint verification ensures each citizen collects only once per day.</div>
+        <div class="project-stack">
+          <span class="tag">Kotlin</span><span class="tag">Fingerprint SDK</span><span class="tag">MVVM</span><span class="tag">Retrofit</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMC Cash -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=KRb8YA2R028" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/KRb8YA2R028/maxresdefault.jpg" alt="SMC Cash Management demo" loading="lazy">
+          <div class="yt-play"><div class="yt-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span class="yt-watch-label">Watch on YouTube</span></div>
+        </a>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Android · SMC Enterprise · B2B</div>
+        <div class="project-name">SMC Cash Management</div>
+        <div class="project-desc">B2B purchasing app for pharmacy and shop owners. Product buying, payment monitoring, offer tracking, delivery history, and multi-outlet account management.</div>
+        <div class="project-stack">
+          <span class="tag">Java</span><span class="tag">MVVM</span><span class="tag">NavGraph</span><span class="tag">Retrofit</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MyBL -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <div class="no-video" style="background:linear-gradient(135deg,#0d1a2b 0%,#0a1520 100%);">
+          <img src="https://play-lh.googleusercontent.com/qNOb0qy2IAPwe0d3Yl5e4UYJTyziDBJjmRkeKrXL_0B5tMpWn3_IrfVD5OyC66wPvDFY2hniA00gnQRN7zC70Q=w240-h480" style="width:72px;height:72px;border-radius:18px;object-fit:cover;" alt="MyBL icon">
+          <span class="no-video-label" style="margin-top:.5rem;">50M+ Downloads · 4.7★</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Android · Banglalink · Super App · 50M+ Downloads</div>
+        <div class="project-name">MyBL — My Banglalink Super App</div>
+        <div class="project-desc">Banglalink's official customer super app serving 50M+ users. Covers self-service (balance, recharge, bundles, FNF, emergency balance), digital services (music, games, courses, doctor consultation, utility bill pay, travel ticketing), and a loyalty community with quizzes and spin wheel. Works offline for basic features.</div>
+        <div class="project-stack">
+          <span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">MVVM</span>
+          <span class="tag">Multi-module</span><span class="tag">Hilt</span><span class="tag">Coroutines</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RYZE -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <div class="no-video" style="background:linear-gradient(135deg,#0d1a2b 0%,#111a28 100%);">
+          <img src="https://play-lh.googleusercontent.com/0N8kpmfvG0Cd0t7NUG1MzpVX6xpkq8iyanXhL2Eh9qxCLVgBfXfdiLd13TUjF4bfH6c=w240-h480" style="width:72px;height:72px;border-radius:18px;object-fit:cover;" alt="Ryze icon">
+          <span class="no-video-label" style="margin-top:.5rem;">1M+ Downloads · Banglalink</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Android · Banglalink · AI Super App · 1M+ Downloads</div>
+        <div class="project-name">RYZE Bangladesh — AI-Powered Super App</div>
+        <div class="project-desc">Banglalink's AI-powered super app combining connectivity management, OTT entertainment (Toffee), and AI productivity tools — Summaryze, Grammaryze, Replyze, Rewryze, and CV Ryzer. Features a gamified loyalty program, personalised homepage, and exclusive rewards for Banglalink subscribers.</div>
+        <div class="project-stack">
+          <span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">MVVM</span>
+          <span class="tag">AI Tools</span><span class="tag">OTT Integration</span><span class="tag">Firebase</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Foodi -->
+    <div class="project-card fade">
+      <div class="video-wrap">
+        <div class="no-video" style="background:linear-gradient(135deg,#1a0d0a 0%,#201008 100%);">
+          <img src="https://play-lh.googleusercontent.com/vW2QYEsJxNAhWmoWfbzemtrngHG0x7Qu7nDiAg28QJM98EcAGZ6FFc-Wgg7VDw7tjnw=w240-h480" style="width:72px;height:72px;border-radius:18px;object-fit:cover;" alt="Foodi icon">
+          <span class="no-video-label" style="margin-top:.5rem;">1M+ Downloads · 3.9★</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Android · Food Delivery · US Bangla Group · 1M+ Downloads</div>
+        <div class="project-name">Foodi — Food &amp; Grocery Delivery</div>
+        <div class="project-desc">Bangladesh's food delivery platform by US Bangla Group — similar to Foodpanda. 1,500+ restaurants, grocery delivery, medicine &amp; daily needs. Features restaurant browsing, real-time order tracking, rider location, multiple payment methods, reviews, and discount offers. Android development role.</div>
+        <div class="project-stack">
+          <span class="tag">Kotlin</span><span class="tag">MVI</span><span class="tag">Jetpack Compose</span>
+          <span class="tag">Ktor</span><span class="tag">Hilt</span><span class="tag">Google Maps</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CLIENTS -->
+<div class="section-wrap" id="clients">
+  <div class="section-header fade">
+    <span class="s-num">05</span>
+    <h2 class="s-title">Organisations &amp; Clients</h2>
+    <div class="s-line"></div>
+  </div>
+  <div class="clients-grid">
+    <div class="client-chip fade"><span class="cdot" style="background:#5b9cf6"></span>Brain Station 23</div>
+    <div class="client-chip fade"><span class="cdot" style="background:#e8c37a"></span>TechnoNext Software</div>
+    <div class="client-chip fade"><span class="cdot" style="background:#78d9a8"></span>Aamra Technologies</div>
+    <div class="client-chip fade"><span class="cdot" style="background:#f07070"></span>Banglalink Digital</div>
+    <div class="client-chip fade"><span class="cdot" style="background:#5b9cf6"></span>Grameenphone</div>
+    <div class="client-chip fade"><span class="cdot" style="background:#e8c37a"></span>bKash</div>
+    <div class="client-chip fade"><span class="cdot" style="background:#78d9a8"></span>SMC Enterprise Ltd</div>
+    <div class="client-chip fade"><span class="cdot" style="background:#f07070"></span>Hamko Group</div>
+    <div class="client-chip fade"><span class="cdot" style="background:#5b9cf6"></span>RANCON</div>
+    <div class="client-chip fade"><span class="cdot" style="background:#e8c37a"></span>LIC Bangladesh</div>
+    <div class="client-chip fade"><span class="cdot" style="background:#78d9a8"></span>Ministry of Food — Bangladesh</div>
+    <div class="client-chip fade"><span class="cdot" style="background:#f07070"></span>জয়িতা ফাউন্ডেশন</div>
+    <div class="client-chip fade"><span class="cdot" style="background:#5b9cf6"></span>BGB School</div>
+    <div class="client-chip fade"><span class="cdot" style="background:#e8c37a"></span>Arena Phone BD</div>
+    <div class="client-chip fade"><span class="cdot" style="background:#78d9a8"></span>Foodi</div>
+  </div>
+</div>
+
+<!-- PLAY STORE -->
+<div class="section-wrap" id="apps">
+  <div class="section-header fade">
+    <span class="s-num">06</span>
+    <h2 class="s-title">Live on Google Play</h2>
+    <div class="s-line"></div>
+  </div>
+  <div class="apps-grid">
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=com.grameenphone.bsafe" target="_blank">
+      <img class="app-icon" src="https://play-lh.googleusercontent.com/XI4pW2fp-nXmVNb9rc7ojyFjWm-FhWOM-BlGrvr2YIsrv29pUh34ThTEGSq5z1qsgvLr" alt="BSafe">
+      <span class="app-name">BSafe – Grameenphone</span>
+    </a>
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=com.learn.quizhub" target="_blank">
+      <img class="app-icon" src="https://lh3.googleusercontent.com/8skihXp9n5LDyRQpCb5-TN0r8MWjDzfNiRrIKywBoDIV50zZMt_JQkXC1iNz-OPSxQ" alt="Quiz Hub">
+      <span class="app-name">Quiz Hub</span>
+    </a>
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=com.tanvir3488.mobile_shop" target="_blank">
+      <img class="app-icon" src="https://play-lh.googleusercontent.com/TFUNrg_dOVEpEgRyUeYxdp5qMdVv91CjjuKr-73epVNLfUHxGm5cyMl4LiKeGzBr_w" alt="Mobile Shop">
+      <span class="app-name">Mobile Shop</span>
+    </a>
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=com.gadgetsolutionbd" target="_blank">
+      <img class="app-icon" src="https://play-lh.googleusercontent.com/iMl0afPBrLIq4toAsftZuLtFusMwjWJw3AZ-saji8DQK0K3dPqaPui3v8nlkrFDkA2hH" alt="Gadget Solution">
+      <span class="app-name">Gadget Solution BD</span>
+    </a>
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=com.arena.bornomilon" target="_blank">
+      <img class="app-icon" src="https://play-lh.googleusercontent.com/-ndyHXPAy_GVTTtYGEruciD4cTRcyV9Ru_DU_ZEpbkeW23BtDXxK0vktb7h0ZQp8avQ" alt="Borno Milon">
+      <span class="app-name">Borno Milon</span>
+    </a>
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=com.arena.borno" target="_blank">
+      <img class="app-icon" src="https://lh5.ggpht.com/qb-dv-Z-OBCU4nrB4YWXIcSmwFUQNgi44u0imM4UAZK-uE89Qbn3S0RCkRdpdIQZ-fg" alt="Borno for Children">
+      <span class="app-name">Borno for Children</span>
+    </a>
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=com.arena.bd.krishi.bank.info" target="_blank">
+      <img class="app-icon" src="https://lh3.googleusercontent.com/vun3Oq0KH5Nd09Dev26oOpgT-3Kfa3q9MYYBx7sXj3raKkvZbT8al5_jtDt-icqa7PWA" alt="BKB Janala">
+      <span class="app-name">BKB-Janala</span>
+    </a>
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=com.bdtrade.app" target="_blank">
+      <img class="app-icon" src="https://lh3.googleusercontent.com/trRRvR5OJJ_-GfBO89Y6v5bfS74bKXUJiQ_YG9xyPcFXu2WrRiHJtmpbmIUz8Jun3iXv" alt="BD Trade Info">
+      <span class="app-name">BD Trade Info</span>
+    </a>
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=com.tanvir3488.scanner" target="_blank">
+      <img class="app-icon" src="https://play-lh.googleusercontent.com/KPtKfIMEY3TwPkpGmeh5xhrMKTVHw3nMTPypjd6Cwt4rfE46i1i2IHLu64WikZ5DOg" alt="B Scanner">
+      <span class="app-name">B Scanner</span>
+    </a>
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=com.arena.lords" target="_blank">
+      <img class="app-icon" src="https://lh3.googleusercontent.com/zEkoQR7ZBF2Y_zEq0dIyklvXtP0PuaAzQPclkTTd210Iu6F8O93bz3tViIXVR_WeFNye" alt="Lords">
+      <span class="app-name">Lords</span>
+    </a>
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=com.Arena.ArenaPlayer" target="_blank">
+      <img class="app-icon" src="https://lh3.googleusercontent.com/g-_EMobQxnejVJwH38VHLO_JwYM5hdLhseVVCCx2o7u10riem0wx_JQbGkd7bpXCcHk" alt="Block Breaker">
+      <span class="app-name">Block Breaker</span>
+    </a>
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=com.T.Ad65.tictactoe" target="_blank">
+      <img class="app-icon" src="https://lh3.googleusercontent.com/prg9_8ZUbiBNU7Xasd0wKWj3H2hsnEiZJKFXYpMUUM0c0gCgoK4T-9DmBsM9GJYIyQox" alt="Tic Tac Toe">
+      <span class="app-name">Tic Tac Toe AI</span>
+    </a>
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=com.arena.banglalinkmela.app" target="_blank">
+      <img class="app-icon" src="https://play-lh.googleusercontent.com/qNOb0qy2IAPwe0d3Yl5e4UYJTyziDBJjmRkeKrXL_0B5tMpWn3_IrfVD5OyC66wPvDFY2hniA00gnQRN7zC70Q=w240-h480" alt="MyBL">
+      <span class="app-name">MyBL – Banglalink</span>
+    </a>
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=live.ryze.app" target="_blank">
+      <img class="app-icon" src="https://play-lh.googleusercontent.com/0N8kpmfvG0Cd0t7NUG1MzpVX6xpkq8iyanXhL2Eh9qxCLVgBfXfdiLd13TUjF4bfH6c=w240-h480" alt="RYZE">
+      <span class="app-name">RYZE Bangladesh</span>
+    </a>
+    <a class="app-tile fade" href="https://play.google.com/store/apps/details?id=com.foodiBd" target="_blank">
+      <img class="app-icon" src="https://play-lh.googleusercontent.com/vW2QYEsJxNAhWmoWfbzemtrngHG0x7Qu7nDiAg28QJM98EcAGZ6FFc-Wgg7VDw7tjnw=w240-h480" alt="Foodi">
+      <span class="app-name">Foodi – Food Delivery</span>
+    </a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section-wrap" id="contact">
+  <div class="section-header fade">
+    <span class="s-num">07</span>
+    <h2 class="s-title">Get in Touch</h2>
+    <div class="s-line"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-cards">
+      <a class="contact-card fade" href="mailto:Tanvir3488@gmail.com">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="c-lbl">Email</div>
+          <div class="c-val">Tanvir3488@gmail.com</div>
+        </div>
+      </a>
+      <a class="contact-card fade" href="tel:+8801945936934">
+        <div class="contact-icon">📱</div>
+        <div>
+          <div class="c-lbl">Phone &amp; WhatsApp</div>
+          <div class="c-val">+880 1945-936934</div>
+        </div>
+      </a>
+      <div class="contact-card fade" style="cursor:default">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="c-lbl">Location</div>
+          <div class="c-val">Kallyanpur, Dhaka, Bangladesh</div>
+        </div>
+      </div>
+      <div class="contact-card fade" style="cursor:default">
+        <div class="contact-icon">🎓</div>
+        <div>
+          <div class="c-lbl">Education</div>
+          <div class="c-val">B.Sc. CSE · Daffodil International University</div>
+        </div>
+      </div>
+    </div>
+    <div class="social-grid">
+      <a class="soc-link fade" href="https://github.com/Tanvir3488" target="_blank">
+        <span>🐙 &nbsp;github.com/Tanvir3488</span><span class="soc-arr">↗</span>
+      </a>
+      <a class="soc-link fade" href="https://bd.linkedin.com/in/tanvir3488" target="_blank">
+        <span>💼 &nbsp;LinkedIn Profile</span><span class="soc-arr">↗</span>
+      </a>
+      <a class="soc-link fade" href="https://www.facebook.com/Tanvir3488" target="_blank">
+        <span>📘 &nbsp;Facebook</span><span class="soc-arr">↗</span>
+      </a>
+      <a class="soc-link fade" href="https://dribbble.com/tanvir3488" target="_blank">
+        <span>🏀 &nbsp;Dribbble</span><span class="soc-arr">↗</span>
+      </a>
+      <a class="soc-link fade" href="https://www.fiverr.com/tanvir3488" target="_blank">
+        <span>💚 &nbsp;Fiverr</span><span class="soc-arr">↗</span>
+      </a>
+      <a class="soc-link fade" href="https://www.youtube.com/channel/UCTRO3aUiHLR5sjyat-yNuzg/videos" target="_blank">
+        <span>▶️ &nbsp;YouTube — Project Demos</span><span class="soc-arr">↗</span>
+      </a>
+      <a class="soc-link fade" href="https://sites.google.com/view/tanvir3488/home" target="_blank">
+        <span>🌐 &nbsp;Original Portfolio</span><span class="soc-arr">↗</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Crafted for <b>Tanvir Ahmed</b> &nbsp;·&nbsp; Senior Software Engineer &nbsp;·&nbsp; Dhaka, Bangladesh &nbsp;·&nbsp; 2026</p>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      e.target.style.transitionDelay = (Array.from(e.target.parentElement.querySelectorAll('.fade')).indexOf(e.target) % 8) * 0.07 + 's';
+      e.target.classList.add('in');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
+
+// hero stats animate in
+setTimeout(() => {
+  document.querySelectorAll('.stat-card').forEach((el, i) => {
+    setTimeout(() => el.classList.add('in'), 400 + i * 120);
+  });
+}, 100);
+</script>
+</body>
+</html>
