@@ -32,7 +32,7 @@ We have 7+ years of experience and have shipped 13+ Android apps to the Google P
 
 ## Contact
 
-- **Email:** tanvir3488@gmail.com
+- **Email:** info@blacknwhitestudio.com
 - **Phone / WhatsApp:** +8801945936934
 - **Website:** https://blacknwhitestudio.com
 - **LinkedIn:** https://www.linkedin.com/company/black-white-studio0
@@ -54,7 +54,7 @@ A: Yes. We have served clients in the US, UK, Australia, Canada, and Singapore, 
 A: Yes. IT consultancy and business process automation is one of our core offerings. We analyze your current workflow and build a custom software system to replace it — including mobile apps, web dashboards, and reporting tools.
 
 **Q: What is the cost to hire Black & White Studio?**
-A: We offer flexible engagement models — fixed-price projects and hourly/monthly retainers. Contact us at tanvir3488@gmail.com or WhatsApp +8801945936934 for a free consultation.
+A: We offer flexible engagement models — fixed-price projects and hourly/monthly retainers. Contact us at info@blacknwhitestudio.com or WhatsApp +8801945936934 for a free consultation.
 
 **Q: Do you integrate Bangladeshi payment gateways?**
 A: Yes. We have experience integrating bKash, Nagad, and Rocket into both Android apps and web applications.
