@@ -8,13 +8,27 @@
   <!-- ═══════════════════════════════════════════
        PRIMARY SEO
   ═══════════════════════════════════════════ -->
-  <title>Black &amp; White Studio | Software Development Agency Bangladesh — Android, Web &amp; SaaS</title>
+  <title>Black &amp; White Studio | Software Development &amp; IT Consultancy Bangladesh — Android, Web, SaaS &amp; Business Automation</title>
 
-  <meta name="description" content="Black &amp; White Studio is a premium software development agency in Bangladesh. We build Android apps, Laravel web apps, SaaS platforms, hotel management systems, OTA platforms &amp; e-commerce solutions for startups and enterprises." />
+  <meta name="description" content="Black &amp; White Studio is a premium software development &amp; IT consultancy in Bangladesh. We build Android apps, Laravel web apps, SaaS &amp; automate any manual business process — Excel workflows, paper-based sales, booking systems, payroll &amp; more. Free consultation available." />
 
   <meta name="keywords" content="
     software development company Bangladesh,
     software development agency Bangladesh,
+    IT consultancy Bangladesh,
+    software consultancy Bangladesh,
+    IT consultant Dhaka,
+    software consultant Bangladesh,
+    business automation Bangladesh,
+    business process automation Bangladesh,
+    automate manual work Bangladesh,
+    digital transformation Bangladesh,
+    custom software Bangladesh,
+    workflow automation Bangladesh,
+    automate Excel spreadsheet Bangladesh,
+    replace manual process with software,
+    software solution for small business Bangladesh,
+    automation software Dhaka,
     Android app development Bangladesh,
     web development company Dhaka,
     Laravel developer Bangladesh,
@@ -28,6 +42,7 @@
     software house Bangladesh,
     Black and White Studio,
     black white studio bd,
+    blacknwhitestudio,
     hotel management system Bangladesh,
     POS software Bangladesh,
     e-commerce development Bangladesh,
@@ -36,7 +51,7 @@
     React developer Bangladesh,
     Vue.js developer Bangladesh,
     Go developer Bangladesh,
-    software development agency,
+    Spring Boot developer Bangladesh,
     hire software developer Bangladesh,
     best software company Bangladesh,
     freelance developer Bangladesh,
@@ -52,7 +67,16 @@
     software company bd,
     app development company bd,
     tech company Bangladesh,
-    IT solutions Bangladesh
+    IT solutions Bangladesh,
+    payroll software Bangladesh,
+    HR software Bangladesh,
+    booking system Bangladesh,
+    inventory management software Bangladesh,
+    ERP software Bangladesh,
+    field sales app Bangladesh,
+    offline Android app Bangladesh,
+    restaurant management software Bangladesh,
+    accounting software Bangladesh
   " />
 
   <meta name="author" content="Black &amp; White Studio" />
@@ -71,6 +95,13 @@
   <meta name="ICBM" content="23.8103, 90.4125" />
 
   <link rel="canonical" href="https://blacknwhitestudio.com/" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://blacknwhitestudio.com/sitemap.xml" />
+
+  <!-- Google Search Console verification — replace with your actual token from search.google.com/search-console -->
+  <!-- <meta name="google-site-verification" content="REPLACE_WITH_YOUR_TOKEN" /> -->
+
+  <!-- Bing Webmaster Tools verification -->
+  <!-- <meta name="msvalidate.01" content="REPLACE_WITH_BING_TOKEN" /> -->
 
   <!-- Alternate language (English default) -->
   <link rel="alternate" hreflang="en" href="https://blacknwhitestudio.com/" />
@@ -149,13 +180,48 @@
        STRUCTURED DATA — JSON-LD
   ═══════════════════════════════════════════ -->
 
+  <!-- SiteLinksSearchBox — enables Google sitelinks search in results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Black & White Studio",
+    "url": "https://blacknwhitestudio.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://blacknwhitestudio.com/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Speakable — marks content readable by Google Assistant / voice AI -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Black & White Studio — Software Development & IT Consultancy Bangladesh",
+    "url": "https://blacknwhitestudio.com/",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "h2", ".hero-tagline", "#services h2", "#consultation h2"]
+    },
+    "description": "Black & White Studio is a software development company and IT consultancy in Dhaka, Bangladesh. We build Android apps, web applications, SaaS platforms, and automate manual business processes for companies across Bangladesh and globally.",
+    "inLanguage": "en",
+    "isAccessibleForFree": true
+  }
+  </script>
+
   <!-- Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Black & White Studio",
-    "alternateName": ["B&W Studio", "Black and White Studio BD"],
+    "alternateName": ["B&W Studio", "Black and White Studio BD", "blacknwhitestudio", "Black n White Studio", "Black & White Studio BD", "BW Studio Bangladesh"],
     "url": "https://blacknwhitestudio.com",
     "logo": {
       "@type": "ImageObject",
@@ -164,7 +230,7 @@
       "height": 400
     },
     "image": "https://blacknwhitestudio.com/og-banner.jpg",
-    "description": "Premium software development agency in Bangladesh specialising in Android apps, Laravel web applications, SaaS platforms, hotel management systems, OTA platforms and e-commerce solutions.",
+    "description": "Premium software development agency and IT consultancy in Bangladesh. We build Android apps, Laravel web apps, SaaS platforms, and automate any manual business process — from Excel-based workflows to field sales operations and booking systems.",
     "foundingDate": "2018",
     "numberOfEmployees": {
       "@type": "QuantitativeValue",
@@ -194,13 +260,15 @@
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Software Development Services",
+      "name": "Software Development & IT Consultancy Services",
       "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "IT Consultancy & Business Process Automation"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Android App Development"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web Development with Laravel & Vue.js"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SaaS Platform Development"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hotel Management System"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "E-Commerce Development"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Workflow & Sales Automation"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "UI/UX Design"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cloud & DevOps"}}
       ]
@@ -265,15 +333,146 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://blacknwhitestudio.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://blacknwhitestudio.com/#services"},
-      {"@type": "ListItem", "position": 3, "name": "Portfolio", "item": "https://blacknwhitestudio.com/#portfolio"},
-      {"@type": "ListItem", "position": 4, "name": "Contact", "item": "https://blacknwhitestudio.com/#contact"}
+      {"@type": "ListItem", "position": 1, "name": "Home",         "item": "https://blacknwhitestudio.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Services",     "item": "https://blacknwhitestudio.com/#services"},
+      {"@type": "ListItem", "position": 3, "name": "Portfolio",    "item": "https://blacknwhitestudio.com/#portfolio"},
+      {"@type": "ListItem", "position": 4, "name": "Consultation", "item": "https://blacknwhitestudio.com/#consultation"},
+      {"@type": "ListItem", "position": 5, "name": "Contact",      "item": "https://blacknwhitestudio.com/#contact"}
     ]
   }
   </script>
 
-  <!-- FAQ Schema -->
+  <!-- Consultancy / Professional Service Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Black & White Studio — IT Consultancy & Business Automation",
+    "url": "https://blacknwhitestudio.com/#consultation",
+    "image": "https://blacknwhitestudio.com/og-banner.jpg",
+    "telephone": "+8801945936934",
+    "email": "tanvir3488@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dhaka",
+      "addressCountry": "BD"
+    },
+    "description": "We consult with companies and individuals to identify manual or inefficient workflows and build custom software solutions to automate them — including Android apps, web systems, ERP, payroll, inventory, booking, sales management, and more.",
+    "serviceType": [
+      "IT Consultancy",
+      "Business Process Automation",
+      "Custom Software Development",
+      "Workflow Digitisation",
+      "Digital Transformation",
+      "ERP Development",
+      "Sales & Distributor Management Systems",
+      "Payroll & HR Automation",
+      "Inventory Management Systems",
+      "Booking & Scheduling Systems"
+    ],
+    "areaServed": [
+      {"@type": "Country", "name": "Bangladesh"},
+      {"@type": "Country", "name": "United States"},
+      {"@type": "Country", "name": "United Kingdom"},
+      {"@type": "Country", "name": "Canada"},
+      {"@type": "Country", "name": "Australia"}
+    ],
+    "offers": {
+      "@type": "Offer",
+      "name": "Free Initial Consultation",
+      "price": "0",
+      "priceCurrency": "BDT",
+      "description": "Free initial consultation to analyse your business process and propose a software solution."
+    }
+  }
+  </script>
+
+  <!-- HowTo — How Consultation Works (rich result eligible) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Get a Custom Software Solution for Your Business Problem",
+    "description": "Black & White Studio analyses your manual or inefficient process and delivers a custom software solution in 3 simple steps.",
+    "image": "https://blacknwhitestudio.com/og-banner.jpg",
+    "totalTime": "P14D",
+    "supply": [
+      {"@type": "HowToSupply", "name": "Description of your current workflow or problem"},
+      {"@type": "HowToSupply", "name": "Business goals and expected outcomes"}
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Describe Your Problem",
+        "text": "Tell us your current workflow, pain points, and what you wish was automated — in plain language, no technical knowledge needed. Contact us via the form, email, or WhatsApp.",
+        "url": "https://blacknwhitestudio.com/#contact"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "We Analyse & Propose",
+        "text": "Our team studies your process, identifies automation opportunities, and delivers a clear solution proposal with timeline and cost estimate — free of charge."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "We Build & Deliver",
+        "text": "We design, develop, test, and hand over your custom software solution — with training and ongoing support included."
+      }
+    ]
+  }
+  </script>
+
+  <!-- ItemList — Problems We Solve (rich result eligible) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Business Problems We Automate with Custom Software",
+    "description": "Examples of manual workflows Black & White Studio can automate with custom software solutions",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Excel-based business management",
+        "description": "Replace spreadsheets with a proper web dashboard, role-based access, and automated reports."
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Paper-based field sales",
+        "description": "Replace paper order forms with an offline Android app synced to a central management system."
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "WhatsApp order taking",
+        "description": "Build a proper e-commerce platform with catalogue, cart, payments, and order tracking."
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Manual booking and scheduling",
+        "description": "Automate bookings for hotels, clinics, salons or services with availability, reminders and payments."
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Manual payroll and HR",
+        "description": "Automate salary calculation, attendance, leave management and payslip generation."
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Any unique manual workflow",
+        "description": "Any repetitive manual process can be analysed and turned into a custom software solution."
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema — expanded with consultancy Q&As -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -284,7 +483,39 @@
         "name": "What services does Black & White Studio offer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We offer Android app development, Laravel & Vue.js web development, SaaS platform development, hotel management systems, e-commerce solutions, UI/UX design, and cloud & DevOps services."
+          "text": "We offer IT consultancy, business process automation, Android app development, Laravel & Vue.js web development, SaaS platform development, hotel management systems, e-commerce solutions, UI/UX design, and cloud & DevOps services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Black & White Studio automate my manual business process?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We consult with businesses and individuals to understand their current manual workflows — spreadsheets, paper forms, WhatsApp orders, manual payroll — and build custom software to automate them completely. Initial consultation is free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What kinds of manual work can you turn into software?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We have built solutions for Excel-based management, paper-based field sales, WhatsApp order taking, manual booking systems, payroll & HR, inventory management, distributor networks, and many more custom workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the initial consultation free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The initial consultation is completely free. You describe your problem or workflow, and we analyse it and propose a solution with timeline and cost — no commitment required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to build a custom software solution?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Timeline depends on scope. Simple automation tools or management systems typically take 4–8 weeks. More complex platforms like ERP, SaaS, or multi-module enterprise systems take 2–6 months."
         }
       },
       {
@@ -292,7 +523,7 @@
         "name": "Where is Black & White Studio located?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Black & White Studio is based in Dhaka, Bangladesh and works with clients globally."
+          "text": "Black & White Studio is based in Dhaka, Bangladesh and works with clients globally including the US, UK, Canada, Australia, and Southeast Asia."
         }
       },
       {
@@ -300,7 +531,7 @@
         "name": "How can I contact Black & White Studio?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can reach us via email at tanvir3488@gmail.com, call or WhatsApp us at +8801945936934, or use the contact form on our website."
+          "text": "You can reach us via email at tanvir3488@gmail.com, call or WhatsApp +8801945936934, or use the contact form on our website at blacknwhitestudio.com."
         }
       },
       {
@@ -428,6 +659,7 @@
           <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
           <li><a href="#tech" class="hover:text-white transition-colors">Tech Stack</a></li>
           <li><a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a></li>
+          <li><a href="#consultation" class="hover:text-white transition-colors">Consultation</a></li>
           <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
           <li>
             <a href="#contact"
@@ -458,6 +690,7 @@
         <li><a href="#services" class="block py-2.5 hover:text-white transition-colors">Services</a></li>
         <li><a href="#tech" class="block py-2.5 hover:text-white transition-colors">Tech Stack</a></li>
         <li><a href="#portfolio" class="block py-2.5 hover:text-white transition-colors">Portfolio</a></li>
+        <li><a href="#consultation" class="block py-2.5 hover:text-white transition-colors">Consultation</a></li>
         <li><a href="#about" class="block py-2.5 hover:text-white transition-colors">About</a></li>
         <li class="pt-1 pb-2">
           <a href="#contact" class="block text-center bg-white text-black py-2.5 rounded-lg hover:bg-gray-100 transition-colors font-semibold">
@@ -1647,6 +1880,154 @@
       </figure>
 
     </div>
+  </div>
+</section>
+
+<!-- ===================== CONSULTATION ===================== -->
+<section id="consultation" class="py-24 sm:py-32 bg-gray-950 text-white relative overflow-hidden">
+
+  <!-- Background grid decoration -->
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:28px 28px;" aria-hidden="true"></div>
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" aria-hidden="true"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <div class="inline-flex items-center gap-2 text-xs font-medium text-gray-400 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6">
+        <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+        Software Consultation &amp; Automation
+      </div>
+      <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-5 leading-tight">
+        Got a manual process?<br />
+        <span style="background:linear-gradient(135deg,#ffffff 0%,#a1a1a1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">We'll turn it into software.</span>
+      </h2>
+      <p class="text-lg text-gray-400 leading-relaxed">
+        Whether you're a company drowning in spreadsheets or an individual with a repetitive workflow —
+        describe your problem to us and we will design, build, and deliver a custom software solution that automates it completely.
+      </p>
+    </div>
+
+    <!-- Problem examples grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-colors">
+        <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2">Example Problem</div>
+        <h3 class="text-base font-semibold text-white mb-2">"We manage everything in Excel"</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Inventory, orders, payroll, or reports manually updated in spreadsheets — we build a proper web system with a dashboard, roles, and automatic reports.</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-colors">
+        <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2">Example Problem</div>
+        <h3 class="text-base font-semibold text-white mb-2">"Our sales team uses paper forms"</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Field agents writing orders on paper, then entering them manually — we build an offline-capable Android app that syncs to a central management system.</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-colors">
+        <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2">Example Problem</div>
+        <h3 class="text-base font-semibold text-white mb-2">"We take orders on WhatsApp"</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Customers messaging for products with no proper tracking — we build an e-commerce platform with catalogue, cart, payments, and order management.</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-colors">
+        <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2">Example Problem</div>
+        <h3 class="text-base font-semibold text-white mb-2">"Booking &amp; scheduling is a mess"</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Hotels, clinics, salons, or services managing appointments manually — we build an automated booking system with availability, reminders, and payments.</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-colors">
+        <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2">Example Problem</div>
+        <h3 class="text-base font-semibold text-white mb-2">"Payroll &amp; HR is done manually"</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Calculating salaries, leaves, and attendance by hand every month — we automate the entire HR and payroll workflow with reports and employee self-service.</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-colors">
+        <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2">Your Problem Here</div>
+        <h3 class="text-base font-semibold text-white mb-2">"We have a unique workflow…"</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Don't see your case above? Any repetitive manual process — no matter how niche — is something we can analyse and turn into a custom software solution.</p>
+      </div>
+
+    </div>
+
+    <!-- How it works — 3 steps -->
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-8 sm:p-10 mb-12">
+      <h3 class="text-center text-xl font-bold text-white mb-8">How consultation works</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 relative">
+
+        <!-- Connector lines (desktop) -->
+        <div class="hidden sm:block absolute top-6 left-1/3 right-1/3 h-px bg-white/10" aria-hidden="true"></div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center font-bold text-lg mb-4 flex-shrink-0">1</div>
+          <h4 class="font-semibold text-white mb-2">Describe Your Problem</h4>
+          <p class="text-gray-400 text-sm leading-relaxed">Tell us your current workflow, pain points, and what you wish was automated — in plain language, no technical knowledge needed.</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center font-bold text-lg mb-4 flex-shrink-0">2</div>
+          <h4 class="font-semibold text-white mb-2">We Analyse &amp; Propose</h4>
+          <p class="text-gray-400 text-sm leading-relaxed">Our team studies your process, identifies automation opportunities, and delivers a clear solution proposal with timeline and cost.</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center font-bold text-lg mb-4 flex-shrink-0">3</div>
+          <h4 class="font-semibold text-white mb-2">We Build &amp; Deliver</h4>
+          <p class="text-gray-400 text-sm leading-relaxed">We design, develop, test, and hand over your custom solution — with training and ongoing support included.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <p class="text-gray-400 text-sm mb-6">Free initial consultation — no commitment required</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#contact"
+           class="inline-flex items-center justify-center gap-2 bg-white text-black font-semibold px-7 py-3.5 rounded-xl hover:bg-gray-100 transition-colors">
+          Describe Your Problem
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/8801945936934"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-white/5 border border-white/15 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-white/10 transition-colors">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 

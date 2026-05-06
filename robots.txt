@@ -1,36 +1,95 @@
 User-agent: *
 Allow: /
 
-# Facebook crawler
-User-agent: facebookexternalhit
-Allow: /
-
-# WhatsApp crawler
-User-agent: WhatsApp
-Allow: /
-
-# LinkedIn crawler
-User-agent: LinkedInBot
-Allow: /
-
-# Twitter / X crawler
-User-agent: Twitterbot
-Allow: /
-
-# Telegram crawler
-User-agent: TelegramBot
-Allow: /
-
-# Google crawlers
+# ── Google ────────────────────────────────────
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /
 
-# Bing crawler
+User-agent: Googlebot-News
+Allow: /
+
+# Google AI (Gemini, Bard training)
+User-agent: Google-Extended
+Allow: /
+
+# ── Bing / Microsoft ─────────────────────────
 User-agent: bingbot
 Allow: /
 
-# Sitemap
+User-agent: msnbot
+Allow: /
+
+# ── OpenAI / ChatGPT ─────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# ── Anthropic / Claude ────────────────────────
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# ── Perplexity ────────────────────────────────
+User-agent: PerplexityBot
+Allow: /
+
+# ── Meta / Facebook AI ────────────────────────
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# ── Apple ────────────────────────────────────
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ── You.com ──────────────────────────────────
+User-agent: YouBot
+Allow: /
+
+# ── Cohere ───────────────────────────────────
+User-agent: cohere-ai
+Allow: /
+
+# ── Common LLM scrapers ───────────────────────
+User-agent: CCBot
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+# ── Social crawlers ───────────────────────────
+User-agent: WhatsApp
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+# ── Sitemap ───────────────────────────────────
 Sitemap: https://blacknwhitestudio.com/sitemap.xml

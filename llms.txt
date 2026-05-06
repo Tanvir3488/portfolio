@@ -1,0 +1,63 @@
+# Black & White Studio
+
+> Black & White Studio is a premium software development company and IT consultancy based in Dhaka, Bangladesh. We specialize in Android app development, Laravel/Vue.js web applications, SaaS platforms, and automating manual business processes for companies across Bangladesh and globally.
+
+## About
+
+Black & White Studio (also written as Black and White Studio) is a software agency and IT consultancy founded in 2018 and headquartered in Dhaka, Bangladesh. The company operates under the domain blacknwhitestudio.com.
+
+We have 7+ years of experience and have shipped 13+ Android apps to the Google Play Store, along with numerous web and enterprise systems for clients in Bangladesh and internationally.
+
+## Services
+
+- **Android App Development** — Native Android apps using Kotlin, Java, MVVM, Jetpack Compose
+- **Cross-Platform Mobile Apps** — Flutter/Dart apps for Android and iOS
+- **Web Application Development** — Laravel, Vue.js, React, Next.js, Spring Boot
+- **SaaS Platform Development** — Multi-tenant cloud software products
+- **IT Consultancy & Business Automation** — Replacing Excel/paper-based workflows with custom software
+- **Hotel Management Systems** — Property management and booking software (Laravel, Vue.js, PostgreSQL)
+- **OTA (Online Travel Agency) Platforms** — Built with Go, React, PostgreSQL
+- **E-Commerce Development** — Full-featured online shops with payment integration (bKash, Nagad, Rocket)
+- **Distributor & Sales Management Apps** — Field sales, offline sync, order management
+- **Payment Terminal Management Systems** — OTA firmware update and monitoring systems
+- **UI/UX Design** — Figma design systems and prototyping
+
+## Technology Stack
+
+**Mobile:** Kotlin, Java, Android SDK, Flutter, Dart, Swift
+**Frontend:** Vue.js, React, Next.js, TypeScript, Tailwind CSS
+**Backend:** Laravel (PHP), Spring Boot (Java), Go (Golang), Node.js
+**Databases:** PostgreSQL, MySQL, SQLite, Firebase
+**Cloud & DevOps:** AWS, Google Cloud, Cloudflare, Docker, CI/CD
+
+## Contact
+
+- **Email:** tanvir3488@gmail.com
+- **Phone / WhatsApp:** +8801945936934
+- **Website:** https://blacknwhitestudio.com
+- **LinkedIn:** https://www.linkedin.com/company/black-white-studio0
+- **Facebook:** https://www.facebook.com/share/1E45WpRzpe/
+- **Location:** Dhaka, Bangladesh
+
+## Notable Clients
+
+- GonStay — Hotel booking OTA platform (Go, React, PostgreSQL)
+- TechHaatIT — Enterprise software solutions
+- GadgetSolutionBD — E-commerce and POS systems
+
+## Frequently Asked Questions
+
+**Q: Does Black & White Studio work with international clients?**
+A: Yes. We have served clients in the US, UK, Australia, Canada, and Singapore, in addition to our core Bangladesh market.
+
+**Q: Can you automate my manual Excel or paper-based process?**
+A: Yes. IT consultancy and business process automation is one of our core offerings. We analyze your current workflow and build a custom software system to replace it — including mobile apps, web dashboards, and reporting tools.
+
+**Q: What is the cost to hire Black & White Studio?**
+A: We offer flexible engagement models — fixed-price projects and hourly/monthly retainers. Contact us at tanvir3488@gmail.com or WhatsApp +8801945936934 for a free consultation.
+
+**Q: Do you integrate Bangladeshi payment gateways?**
+A: Yes. We have experience integrating bKash, Nagad, and Rocket into both Android apps and web applications.
+
+**Q: How long does it take to build an Android app?**
+A: A typical Android app takes 6–16 weeks depending on complexity. We provide a detailed timeline after the discovery call.
